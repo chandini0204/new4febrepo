@@ -21,11 +21,13 @@
   <echo message="Creating WAR file..."/>
   <war destfile="dist/AntExample.war" webxml="WebContent/WEB-INF/web.xml">
     <fileset dir="WebContent"/>
+     <include name="**/*.*"/>
+    </fileset>
     <classes dir="${build.dir}"/>
   </war>
   <echo message="WAR file created successfully!"/>
 </target>
-
+  
   <!-- Default target -->
   <target name="build" depends="war">
     <echo message="Build successful"/>
